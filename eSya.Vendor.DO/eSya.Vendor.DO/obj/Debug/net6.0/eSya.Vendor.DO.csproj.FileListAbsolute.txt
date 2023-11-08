@@ -1,0 +1,12 @@
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\bin\Debug\net6.0\eSya.Vendor.DO.deps.json
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\bin\Debug\net6.0\eSya.Vendor.DO.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\bin\Debug\net6.0\eSya.Vendor.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.csproj.AssemblyReference.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.AssemblyInfoInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.AssemblyInfo.cs
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\refint\eSya.Vendor.DO.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\eSya.Vendor.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DO\eSya.Vendor.DO\obj\Debug\net6.0\ref\eSya.Vendor.DO.dll

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "PackagePath": "staticwebassets\\Resources\\ar-EG.json"
+    },
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "PackagePath": "staticwebassets\\Resources\\en-US.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.eSya.Vendor.WebAPI.props",
+      "PackagePath": "build\\eSya.Vendor.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.eSya.Vendor.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\eSya.Vendor.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.eSya.Vendor.WebAPI.props",
+      "PackagePath": "buildTransitive\\eSya.Vendor.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.eSya.Vendor.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

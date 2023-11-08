@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "LZsJTbA2IAqroEiJvtz8aiQPw3ZUz2xrMFpAv9L7lnw=",
+  "Source": "eSya.Vendor.WebAPI",
+  "BasePath": "_content/eSya.Vendor.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "eSya.Vendor.WebAPI\\wwwroot",
+      "Source": "eSya.Vendor.WebAPI",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.Vendor.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "SourceId": "eSya.Vendor.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.Vendor.WebAPI",
+      "RelativePath": "Resources/ar-EG.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\ar-EG.json"
+    },
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "SourceId": "eSya.Vendor.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\eSya.Vendor.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.Vendor.WebAPI",
+      "RelativePath": "Resources/en-US.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\en-US.json"
+    }
+  ]
+}

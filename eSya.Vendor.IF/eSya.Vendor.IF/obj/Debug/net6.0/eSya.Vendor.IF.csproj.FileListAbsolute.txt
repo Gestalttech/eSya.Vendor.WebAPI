@@ -1,0 +1,15 @@
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\bin\Debug\net6.0\eSya.Vendor.IF.deps.json
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\bin\Debug\net6.0\eSya.Vendor.IF.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\bin\Debug\net6.0\eSya.Vendor.IF.pdb
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\bin\Debug\net6.0\eSya.Vendor.DO.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\bin\Debug\net6.0\eSya.Vendor.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.csproj.AssemblyReference.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.AssemblyInfoInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.AssemblyInfo.cs
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.csproj.CopyComplete
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\refint\eSya.Vendor.IF.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\eSya.Vendor.IF.pdb
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.IF\eSya.Vendor.IF\obj\Debug\net6.0\ref\eSya.Vendor.IF.dll
