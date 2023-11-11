@@ -1,9 +1,9 @@
 using eSya.Vendor.WebAPI.Utility;
 using eSya.Vendor.WebAPI.Filters;
 using Microsoft.Extensions.Configuration;
-//using DL_Vendor = eSya.Vendor.DL.Entities;
-//using eSya.Vendor.IF;
-//using eSya.Vendor.DL.Repository;
+using DL_Vendor = eSya.Vendor.DL.Entities;
+using eSya.Vendor.IF;
+using eSya.Vendor.DL.Repository;
 using Microsoft.Extensions.Localization;
 using eSya.Vendor.DL.Localization;
 using System.Globalization;
@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-//DL_Vendor.eSyaEnterprise._connString = builder.Configuration.GetConnectionString("dbConn_eSyaEnterprise");
+DL_Vendor.eSyaEnterprise._connString = builder.Configuration.GetConnectionString("dbConn_eSyaEnterprise");
 
 builder.Services.AddControllersWithViews(options =>
 {
@@ -55,7 +55,9 @@ builder.Services.AddCors(c =>
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
 });
 
-//builder.Services.AddScoped<IFormsRepository, FormsRepository>();
+builder.Services.AddScoped<IVendorRepository, VendorRepository>();
+builder.Services.AddScoped<ICommonDataRepository, CommonDataRepository>();
+
 
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 

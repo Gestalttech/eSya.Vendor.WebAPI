@@ -1,7 +1,15 @@
 {
-  "W00172": "New Error code has to add",
-  
-
+  "W0172": "Vendor Creation Failed",
+  "W0173": "Vendor Name is already Exist",
+  "W0174": "Vendor Updation Failed",
+  "W0175": "Vendor is not Exist",
+  "W0176": "Only one Location Should be as Default Location",
+  "W0177": "already Exist",
+  "W0178": "Statutory details Creation has Failed",
+  "W0179": "Benificiary Bank AccountNo already Exist",
+  "W0180": "Vendor Bank details Creation has Failed",
+  "W0181": "Couldn't find Vendor Bank Details",
+  "W0182": "Failed to Link Supply Group",
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",
   "S0003": "Activated Successfully",

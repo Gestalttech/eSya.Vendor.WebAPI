@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using eSya.Vendor.DL.Entities;
+using eSya.Vendor.DL.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +18,7 @@ namespace eSya.Vendor.WebAPI.Utility
             
             context.HttpContext.Request.Headers.TryGetValue("dbContextType", out var dbContextType);
             var configuration = context.HttpContext.RequestServices.GetRequiredService<IConfiguration>();
-            //eSyaEnterprise._connString= configuration.GetConnectionString(dbContextType + ":dbConn_eSyaEnterprise");
+            eSyaEnterprise._connString = configuration.GetConnectionString(dbContextType + ":dbConn_eSyaEnterprise");
             await next();
 
         }
