@@ -16,8 +16,8 @@ namespace eSya.Vendor.DL.Entities
         public string? PoboxPattern { get; set; }
         public bool IsPinapplicable { get; set; }
         public string? PincodePattern { get; set; }
-        public string? DateFormat { get; set; }
-        public string? ShortDateFormat { get; set; }
+        public string DateFormat { get; set; } = null!;
+        public string ShortDateFormat { get; set; } = null!;
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

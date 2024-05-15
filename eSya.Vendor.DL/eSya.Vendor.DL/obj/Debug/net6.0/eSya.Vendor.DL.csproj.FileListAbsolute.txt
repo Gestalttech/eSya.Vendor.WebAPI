@@ -17,3 +17,4 @@ D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DL\eSya.Vendor.DL\ob
 D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DL\eSya.Vendor.DL\obj\Debug\net6.0\eSya.Vendor.DL.pdb
 D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DL\eSya.Vendor.DL\obj\Debug\net6.0\eSya.Vendor.DL.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DL\eSya.Vendor.DL\obj\Debug\net6.0\ref\eSya.Vendor.DL.dll
+D:\Projects\eSyaProjects2022\eSya.Vendor.WebAPI\eSya.Vendor.DL\eSya.Vendor.DL\obj\Debug\net6.0\eSya.Vendor.DL.sourcelink.json

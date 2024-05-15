@@ -8,6 +8,7 @@ namespace eSya.Vendor.DL.Entities
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
+
         public eSyaEnterprise()
         {
         }
@@ -22,7 +23,6 @@ namespace eSya.Vendor.DL.Entities
         public virtual DbSet<GtEavnbl> GtEavnbls { get; set; } = null!;
         public virtual DbSet<GtEavncd> GtEavncds { get; set; } = null!;
         public virtual DbSet<GtEavnpa> GtEavnpas { get; set; } = null!;
-        public virtual DbSet<GtEavnpn> GtEavnpns { get; set; } = null!;
         public virtual DbSet<GtEavnsd> GtEavnsds { get; set; } = null!;
         public virtual DbSet<GtEavnsg> GtEavnsgs { get; set; } = null!;
         public virtual DbSet<GtEavnsl> GtEavnsls { get; set; } = null!;
@@ -211,34 +211,6 @@ namespace eSya.Vendor.DL.Entities
                 entity.Property(e => e.ParmValue).HasColumnType("numeric(18, 6)");
             });
 
-            modelBuilder.Entity<GtEavnpn>(entity =>
-            {
-                entity.HasKey(e => new { e.VendorCode, e.ItemCode });
-
-                entity.ToTable("GT_EAVNPN");
-
-                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.FormId)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("FormID");
-
-                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.PartDesc)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.PartNo)
-                    .HasMaxLength(15)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<GtEavnsd>(entity =>
             {
                 entity.HasKey(e => new { e.VendorId, e.VendorLocationId, e.StatutoryCode });
@@ -400,6 +372,8 @@ namespace eSya.Vendor.DL.Entities
                 entity.Property(e => e.Isdcode).HasColumnName("ISDCode");
 
                 entity.Property(e => e.LocationDescription).HasMaxLength(150);
+
+                entity.Property(e => e.Lstatus).HasColumnName("LStatus");
 
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
