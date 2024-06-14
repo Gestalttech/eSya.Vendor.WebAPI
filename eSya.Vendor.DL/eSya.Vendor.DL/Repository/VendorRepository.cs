@@ -126,7 +126,7 @@ namespace eSya.Vendor.DL.Repository
                                 VendorClass=obj.VendorClass,
                                 CreditType = obj.CreditType,
                                 PreferredPaymentMode = obj.PreferredPaymentMode,
-                                CreditPeriod = obj.CreditPeriod,
+                                CreditPeriod =Convert.ToInt32( obj.CreditPeriod),
                                 ApprovalStatus = obj.ApprovalStatus,
                                 IsBlackListed = obj.IsBlackListed,
                                 ReasonForBlacklist = obj.ReasonForBlacklist,
@@ -221,7 +221,7 @@ namespace eSya.Vendor.DL.Repository
                                 _objven.VendorName = obj.VendorName;
                                 _objven.VendorClass = obj.VendorClass;
                                 _objven.CreditType = obj.CreditType;
-                                _objven.CreditPeriod = obj.CreditPeriod;
+                                _objven.CreditPeriod =Convert.ToInt32(obj.CreditPeriod);
                                 _objven.PreferredPaymentMode = obj.PreferredPaymentMode;
                                 _objven.ApprovalStatus = obj.ApprovalStatus;
                                 _objven.IsBlackListed = obj.IsBlackListed;
