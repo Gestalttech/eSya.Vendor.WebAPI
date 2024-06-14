@@ -36,6 +36,7 @@ namespace eSya.Vendor.DO
         public int StateCode { get; set; }
         public int Isdcode { get; set; }
         public string MobileNumber { get; set; } = null!;
+        public int WIsdcode { get; set; }
         public string WhatsappNumber { get; set; } = null!;
         public string ContactPerson { get; set; } = null!;
         public string EMailId { get; set; } = null!;

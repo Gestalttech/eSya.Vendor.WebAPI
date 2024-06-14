@@ -360,6 +360,7 @@ namespace eSya.Vendor.DL.Repository
                           Isdcode = x.Isdcode,
                           ContactPerson = x.ContactPerson,
                           MobileNumber = x.MobileNumber,
+                          WIsdcode=x.Wisdcode,
                           WhatsappNumber = x.WhatsappNumber,
                           EMailId = x.EMailId,
                           ActiveStatus = x.ActiveStatus
@@ -430,6 +431,7 @@ namespace eSya.Vendor.DL.Repository
                                     StateCode= objloc.StateCode,
                                     ContactPerson = objloc.ContactPerson,
                                     MobileNumber = objloc.MobileNumber,
+                                    Wisdcode=objloc.WIsdcode,
                                     WhatsappNumber = objloc.WhatsappNumber,
                                     EMailId = objloc.EMailId,
                                     ActiveStatus = objloc.ActiveStatus,
@@ -501,6 +503,7 @@ namespace eSya.Vendor.DL.Repository
                                     ven_loc.Isdcode = objloc.Isdcode;
                                     ven_loc.ContactPerson = objloc.ContactPerson;
                                     ven_loc.MobileNumber = objloc.MobileNumber;
+                                    ven_loc.Wisdcode = objloc.WIsdcode;
                                     ven_loc.WhatsappNumber = objloc.WhatsappNumber;
                                     ven_loc.EMailId = objloc.EMailId;
                                     ven_loc.ActiveStatus =objloc.ActiveStatus;

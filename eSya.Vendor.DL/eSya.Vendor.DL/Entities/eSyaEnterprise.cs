@@ -311,6 +311,8 @@ namespace eSya.Vendor.DL.Entities
 
                 entity.Property(e => e.WhatsappNumber).HasMaxLength(15);
 
+                entity.Property(e => e.Wisdcode).HasColumnName("WISDCode");
+
                 entity.HasOne(d => d.Vendor)
                     .WithMany(p => p.GtEavnsls)
                     .HasForeignKey(d => d.VendorId)
