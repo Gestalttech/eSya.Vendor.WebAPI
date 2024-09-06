@@ -29,6 +29,7 @@ namespace eSya.Vendor.DL.Entities
         public virtual DbSet<GtEcapcd> GtEcapcds { get; set; } = null!;
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
         public virtual DbSet<GtEccncd> GtEccncds { get; set; } = null!;
+        public virtual DbSet<GtEcsulg> GtEcsulgs { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -451,6 +452,40 @@ namespace eSya.Vendor.DL.Entities
                 entity.Property(e => e.ShortDateFormat)
                     .HasMaxLength(15)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<GtEcsulg>(entity =>
+            {
+                entity.HasKey(e => e.SubledgerGroup);
+
+                entity.ToTable("GT_ECSULG");
+
+                entity.Property(e => e.SubledgerGroup).ValueGeneratedNever();
+
+                entity.Property(e => e.Coahead)
+                    .HasMaxLength(15)
+                    .IsUnicode(false)
+                    .HasColumnName("COAHead");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.SubledgerDesc).HasMaxLength(75);
+
+                entity.Property(e => e.SubledgerType)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
             });
 
             OnModelCreatingPartial(modelBuilder);

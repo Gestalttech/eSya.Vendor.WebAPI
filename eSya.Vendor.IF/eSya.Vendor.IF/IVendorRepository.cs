@@ -56,6 +56,7 @@ namespace eSya.Vendor.IF
         #endregion Vendor Bank Details
 
         #region Vendor Supply Group
+        Task<List<DO_Parameters>> GetVendorSuuplyGroupSubledgerType(string subledgertype);
         Task<List<DO_eSyaParameter>> GetVendorSuuplyGroupParameterList(int vendorID);
         Task<DO_ReturnParameter> InsertSuuplyGroupforVendor(DO_VendorSupplyGroup objsupply);
         #endregion Vendor Supply Group

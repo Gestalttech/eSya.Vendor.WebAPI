@@ -929,6 +929,31 @@ namespace eSya.Vendor.DL.Repository
         #endregion Vendor Bank Details
 
         #region Vendor Supply Group
+        public async Task<List<DO_Parameters>> GetVendorSuuplyGroupSubledgerType(string subledgertype)
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                try
+                {
+
+                    var ds = db.GtEcsulgs.Where(x => x.SubledgerType == subledgertype && x.ActiveStatus).
+                      Select(x => new DO_Parameters
+                      {
+                          ParameterId = x.SubledgerGroup,
+                          ParameterDesc=x.SubledgerDesc,
+                          ActiveStatus = x.ActiveStatus
+                      }).ToListAsync();
+                    return await ds;
+
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
         public async Task<List<DO_eSyaParameter>> GetVendorSuuplyGroupParameterList(int vendorID)
         {
             using (var db = new eSyaEnterprise())

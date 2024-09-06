@@ -195,6 +195,17 @@ namespace eSya.Vendor.WebAPI.Controllers
 
         #region Vendor Supply Group
         /// <summary>
+        /// Getting  Vendor Suuply Group from Subledger type.
+        /// UI Reffered - Vendor Suuply Group Grid
+        /// params-vendorID 
+        /// </summary>     
+        [HttpGet]
+        public async Task<IActionResult> GetVendorSuuplyGroupSubledgerType(string subledgertype)
+        {
+            var supply = await _VendorRepository.GetVendorSuuplyGroupSubledgerType(subledgertype);
+            return Ok(supply);
+        }
+        /// <summary>
         /// Getting  Vendor Suuply Group.
         /// UI Reffered - Vendor Suuply Group Grid
         /// params-vendorID 
