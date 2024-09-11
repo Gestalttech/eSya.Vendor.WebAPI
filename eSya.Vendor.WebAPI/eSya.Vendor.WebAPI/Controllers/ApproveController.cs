@@ -18,15 +18,15 @@ namespace eSya.Vendor.WebAPI.Controllers
             _ApproveRepository = ApproveRepository;
         }
         [HttpGet]
-        public IActionResult GetVendorsForApprovals()
+        public  async Task<IActionResult> GetVendorsForApprovals()
         {
-            var vendors = _ApproveRepository.GetVendorsForApprovals();
+            var vendors =await _ApproveRepository.GetVendorsForApprovals();
             return Ok(vendors);
         }
         [HttpPost]
-        public IActionResult ApproveVendor(DO_VendorApproval obj)
+        public async Task<IActionResult> ApproveVendor(DO_VendorApproval obj)
         {
-            var vendors = _ApproveRepository.ApproveVendor(obj);
+            var vendors =await _ApproveRepository.ApproveVendor(obj);
             return Ok(vendors);
         }
     }

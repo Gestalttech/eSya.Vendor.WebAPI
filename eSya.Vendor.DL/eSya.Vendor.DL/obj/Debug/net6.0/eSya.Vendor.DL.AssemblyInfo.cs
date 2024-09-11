@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eSya.Vendor.DL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8846a84ce31044e0f6544d7912cd2ffbf61c307")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a792bc05c3b73029f95bf7aaf872f38757f5a0cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("eSya.Vendor.DL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eSya.Vendor.DL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
