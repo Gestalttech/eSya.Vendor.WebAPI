@@ -57,7 +57,7 @@ builder.Services.AddCors(c =>
 
 builder.Services.AddScoped<IVendorRepository, VendorRepository>();
 builder.Services.AddScoped<ICommonDataRepository, CommonDataRepository>();
-
+builder.Services.AddScoped<IApproveRepository, ApproveRepository>(); 
 
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
