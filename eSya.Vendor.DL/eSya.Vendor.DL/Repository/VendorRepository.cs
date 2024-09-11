@@ -648,7 +648,7 @@ namespace eSya.Vendor.DL.Repository
 
         #endregion Vendor Business Link
 
-        #region Vendor Statutory Details
+        #region Vendor Statutory Details need to remove
 
         public async Task<List<DO_VendorStatutoryDetails>> GetStatutorydetailsbyVendorcodeAndLocationId(int vendorID, int locationId)
         {
@@ -677,7 +677,7 @@ namespace eSya.Vendor.DL.Repository
                 throw;
             }
         }
-
+       
         public async Task<DO_ReturnParameter> InsertOrUpdateStatutorydetails(DO_VendorStatutoryDetails objsat)
         {
             try
@@ -792,7 +792,206 @@ namespace eSya.Vendor.DL.Repository
             }
         }
 
-        #endregion Vendor Statutory Details
+
+        #endregion
+
+        #region Vendor Statutory Details
+        public async Task<List<DO_VendorLocation>> GetVendorAddressLocationsByVendorID(int vendorID)
+        {
+            try
+            {
+                using (eSyaEnterprise db = new eSyaEnterprise())
+                {
+                    var vendor_loc =await db.GtEavnsls.Where(v => v.VendorId == vendorID).
+                      Select(x => new DO_VendorLocation
+                      {
+                          VendorId = x.VendorId,
+                          VendorLocationId = x.VendorLocationId,
+                          VendorLocation = x.VendorAddress + "-" + x.VendorLocation,
+                      }).OrderBy(x => x.VendorLocation).ToListAsync();
+                    return vendor_loc;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public async Task<List<DO_CountryISDCodes>> GetISDCodesbyVendorId(int vendorID)
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                try
+                {
+                    var dc_ms = db.GtEavnbls
+                        .Join(db.GtEcbslns,
+                        d => new { d.BusinessKey },
+                        a => new { a.BusinessKey },
+                        (d, a) => new { d, a })
+                        .Join(db.GtEccncds,
+                        dd => new { dd.a.Isdcode },
+                        aa => new { aa.Isdcode },
+                        (dd, aa) => new { dd, aa })
+                        .Where(w => w.dd.d.VendorId == vendorID && w.dd.d.ActiveStatus == true && w.aa.ActiveStatus == true
+                            && w.dd.a.ActiveStatus == true)
+                        .AsNoTracking()
+                        .Select(x => new DO_CountryISDCodes
+                        {
+                            Isdcode = x.dd.a.Isdcode,
+                            CountryFlag = x.aa.CountryFlag,
+                            CountryCode = x.aa.CountryCode,
+                            CountryName = x.aa.CountryName,
+                            MobileNumberPattern = x.aa.MobileNumberPattern,
+
+                        }).ToList();
+                    if (dc_ms.Count > 0)
+                    {
+                        var res = dc_ms.GroupBy(x => x.Isdcode).Select(y => y.First()).Distinct();
+                        return res.ToList();
+                    }
+                    else
+                    {
+                        return dc_ms.ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            }
+        }
+
+        public async Task<List<DO_VendorStatutoryDetails>> GetVendorStatutoryDetails(int vendorID, int isdCode, int locationId)
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+
+                    return await db.GtEccnsds.Where(x => x.Isdcode == isdCode && x.ActiveStatus).
+                        Join(db.GtEcsupas.Where(x => x.Isdcode == isdCode && x.Action && x.ParameterId == 3),
+                        x => new { x.StatutoryCode },
+                        y => new { y.StatutoryCode },
+                        (x, y) => new { x, y })
+                       .GroupJoin(db.GtEavnsds.Where(x => x.VendorId == vendorID && x.VendorLocationId == locationId),
+                       m => m.x.StatutoryCode,
+                       l => l.StatutoryCode,
+                       (m, l) => new
+                       { m, l }).SelectMany(z => z.l.DefaultIfEmpty(),
+                       (a, b) => new DO_VendorStatutoryDetails
+                       {
+                           Isdcode = a.m.x.Isdcode,
+                           VendorId = vendorID,
+                           VendorLocationId = locationId,
+                           StatutoryCode = a.m.x.StatutoryCode,
+                           StatutoryShortCode = a.m.x.StatShortCode,
+                           StatutoryDescription = a.m.x.StatutoryDescription,
+                           StatutoryValue = b != null ? b.StatutoryDescription : "",
+                           ActiveStatus = b != null ? b.ActiveStatus : false
+                       }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<DO_ReturnParameter> InsertOrUpdateVendorStatutoryDetails(List<DO_VendorStatutoryDetails> obj)
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                using (var dbContext = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var is_StatutoryDetailEnter = obj.Where(w => !String.IsNullOrEmpty(w.StatutoryValue)).Count();
+                        if (is_StatutoryDetailEnter <= 0)
+                        {
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0183", Message = string.Format(_localizer[name: "W0183"]) };
+                        }
+
+                        foreach (var sd in obj.Where(w => !String.IsNullOrEmpty(w.StatutoryValue)))
+                        {
+                            GtEavnsd cs_sd = db.GtEavnsds.Where(x => x.VendorId == sd.VendorId && x.StatutoryCode == sd.StatutoryCode && x.VendorLocationId == sd.VendorLocationId).FirstOrDefault();
+                            if (cs_sd == null)
+                            {
+                                var o_cssd = new GtEavnsd
+                                {
+                                    VendorId = sd.VendorId,
+                                    VendorLocationId = sd.VendorLocationId,
+                                    StatutoryCode = sd.StatutoryCode,
+                                    StatutoryDescription = sd.StatutoryValue,
+                                    ActiveStatus = sd.ActiveStatus,
+                                    FormId = sd.FormID,
+                                    CreatedBy = sd.UserID,
+                                    CreatedOn = System.DateTime.Now,
+                                    CreatedTerminal = sd.TerminalID
+                                };
+                                db.GtEavnsds.Add(o_cssd);
+                            }
+                            else
+                            {
+                                cs_sd.StatutoryDescription = sd.StatutoryValue;
+                                cs_sd.ActiveStatus = sd.ActiveStatus;
+                                cs_sd.ModifiedBy = sd.UserID;
+                                cs_sd.ModifiedOn = System.DateTime.Now;
+                                cs_sd.ModifiedTerminal = sd.TerminalID;
+                            }
+                            await db.SaveChangesAsync();
+                        }
+
+                        dbContext.Commit();
+                        return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        dbContext.Rollback();
+                        throw new Exception(CommonMethod.GetValidationMessageFromException(ex));
+                    }
+                    catch (Exception ex)
+                    {
+                        dbContext.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+        }
+       
+        //public async Task<List<DO_CountryISDCodes>> GetISDCodesbyBusinessKey(int businessKey)
+        //{
+        //    using (var db = new eSyaEnterprise())
+        //    {
+        //        try
+        //        {
+        //            var do_cl = db.GtEcbslns
+        //                .Join(db.GtEccncds.Where(w => w.ActiveStatus),
+        //                lc => new { lc.Isdcode },
+        //                o => new { o.Isdcode },
+        //                (lc, o) => new { lc, o })
+        //                .Where(w => w.lc.BusinessKey == businessKey && w.lc.ActiveStatus)
+        //               .AsNoTracking()
+        //               .Select(r => new DO_CountryISDCodes
+        //               {
+        //                   Isdcode = r.lc.Isdcode,
+        //                   CountryName = r.o.CountryName,
+        //                   CountryFlag = r.o.CountryFlag,
+        //                   MobileNumberPattern = r.o.MobileNumberPattern,
+        //                   CountryCode = r.o.CountryCode,
+        //               }).ToListAsync();
+
+        //            return await do_cl;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+        //}
+
+        #endregion
 
         #region Vendor Bank Details
 

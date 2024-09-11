@@ -10,6 +10,8 @@
   "W0180": "Vendor Bank details Creation has Failed",
   "W0181": "Couldn't find Vendor Bank Details",
   "W0182": "Failed to Link Supply Group",
+  "W0183": "Please Enter Statutory Details",
+
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",
   "S0003": "Activated Successfully",

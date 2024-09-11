@@ -29,7 +29,9 @@ namespace eSya.Vendor.DL.Entities
         public virtual DbSet<GtEcapcd> GtEcapcds { get; set; } = null!;
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
         public virtual DbSet<GtEccncd> GtEccncds { get; set; } = null!;
+        public virtual DbSet<GtEccnsd> GtEccnsds { get; set; } = null!;
         public virtual DbSet<GtEcsulg> GtEcsulgs { get; set; } = null!;
+        public virtual DbSet<GtEcsupa> GtEcsupas { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -454,6 +456,42 @@ namespace eSya.Vendor.DL.Entities
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<GtEccnsd>(entity =>
+            {
+                entity.HasKey(e => new { e.Isdcode, e.StatutoryCode });
+
+                entity.ToTable("GT_ECCNSD");
+
+                entity.Property(e => e.Isdcode).HasColumnName("ISDCode");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.StatPattern).HasMaxLength(25);
+
+                entity.Property(e => e.StatShortCode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StatutoryDescription).HasMaxLength(50);
+
+                entity.HasOne(d => d.IsdcodeNavigation)
+                    .WithMany(p => p.GtEccnsds)
+                    .HasForeignKey(d => d.Isdcode)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GT_ECCNSD_GT_ECCNCD");
+            });
+
             modelBuilder.Entity<GtEcsulg>(entity =>
             {
                 entity.HasKey(e => e.SubledgerGroup);
@@ -486,6 +524,30 @@ namespace eSya.Vendor.DL.Entities
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength();
+            });
+
+            modelBuilder.Entity<GtEcsupa>(entity =>
+            {
+                entity.HasKey(e => new { e.Isdcode, e.StatutoryCode, e.ParameterId });
+
+                entity.ToTable("GT_ECSUPA");
+
+                entity.Property(e => e.Isdcode).HasColumnName("ISDCode");
+
+                entity.Property(e => e.ParameterId).HasColumnName("ParameterID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

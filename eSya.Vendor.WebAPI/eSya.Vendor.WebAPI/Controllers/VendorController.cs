@@ -131,7 +131,7 @@ namespace eSya.Vendor.WebAPI.Controllers
         }
         #endregion Vendor Business Link
 
-        #region Vendor Statutory Details
+        #region Vendor Statutory Details need to remove
         /// <summary>
         /// Getting  Statutory details.
         /// UI Reffered -Vendor Statutory Details Grid
@@ -155,6 +155,42 @@ namespace eSya.Vendor.WebAPI.Controllers
 
         }
         #endregion Vendor Statutory Details
+
+        #region Vendor Statutory Details
+        [HttpGet]
+        public async Task<IActionResult> GetVendorAddressLocationsByVendorID(int vendorID)
+        {
+            var statdetails =await _VendorRepository.GetVendorAddressLocationsByVendorID(vendorID);
+            return Ok(statdetails);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetISDCodesbyVendorId(int vendorID)
+        {
+            var statdetails =await _VendorRepository.GetISDCodesbyVendorId(vendorID);
+            return Ok(statdetails);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetVendorStatutoryDetails(int vendorID, int isdCode, int locationId)
+        {
+            var statdetails = await _VendorRepository.GetVendorStatutoryDetails(vendorID, isdCode, locationId);
+            return Ok(statdetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> InsertOrUpdateVendorStatutoryDetails(List<DO_VendorStatutoryDetails> obj)
+        {
+            var msg = await _VendorRepository.InsertOrUpdateVendorStatutoryDetails(obj);
+            return Ok(msg);
+
+        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetISDCodesbyBusinessKey(int businessKey)
+        //{
+        //    var statdetails = await _VendorRepository.GetISDCodesbyBusinessKey(businessKey);
+        //    return Ok(statdetails);
+        //}
+
+        #endregion
 
         #region Vendor Bank Details
         /// <summary>

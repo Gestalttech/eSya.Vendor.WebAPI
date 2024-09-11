@@ -5,6 +5,11 @@ namespace eSya.Vendor.DL.Entities
 {
     public partial class GtEccncd
     {
+        public GtEccncd()
+        {
+            GtEccnsds = new HashSet<GtEccnsd>();
+        }
+
         public int Isdcode { get; set; }
         public string CountryCode { get; set; } = null!;
         public string CountryName { get; set; } = null!;
@@ -26,5 +31,7 @@ namespace eSya.Vendor.DL.Entities
         public int? ModifiedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public string? ModifiedTerminal { get; set; }
+
+        public virtual ICollection<GtEccnsd> GtEccnsds { get; set; }
     }
 }

@@ -37,13 +37,22 @@ namespace eSya.Vendor.IF
 
         #endregion Vendor Business Link
 
-        #region Vendor Statutory Details
+        #region Vendor Statutory Details need to remove
 
         Task<List<DO_VendorStatutoryDetails>> GetStatutorydetailsbyVendorcodeAndLocationId(int vendorID, int locationId);
 
         Task<DO_ReturnParameter> InsertOrUpdateStatutorydetails(DO_VendorStatutoryDetails objsat);
 
         #endregion Vendor Statutory Details
+
+        #region Vendor Statutory Details
+        Task<List<DO_VendorLocation>> GetVendorAddressLocationsByVendorID(int vendorID);
+        Task<List<DO_CountryISDCodes>> GetISDCodesbyVendorId(int vendorID);
+        Task<List<DO_VendorStatutoryDetails>> GetVendorStatutoryDetails(int vendorID, int isdCode, int locationId);
+        Task<DO_ReturnParameter> InsertOrUpdateVendorStatutoryDetails(List<DO_VendorStatutoryDetails> obj);
+        //Task<List<DO_CountryISDCodes>> GetISDCodesbyBusinessKey(int businessKey);
+
+        #endregion
 
         #region Vendor Bank Details
 
