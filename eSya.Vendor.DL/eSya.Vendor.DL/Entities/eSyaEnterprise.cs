@@ -179,6 +179,8 @@ namespace eSya.Vendor.DL.Entities
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
+                entity.Property(e => e.RejectionReason).HasMaxLength(250);
+
                 entity.Property(e => e.VendorName).HasMaxLength(75);
             });
 

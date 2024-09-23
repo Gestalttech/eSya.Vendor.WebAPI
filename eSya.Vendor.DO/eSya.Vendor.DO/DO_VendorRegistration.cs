@@ -19,7 +19,8 @@ namespace eSya.Vendor.DO
         public int ReasonForBlacklist { get; set; }
         public int SupplierScore { get; set; }
         public bool ActiveStatus { get; set; }
-       // public int VendorCode { get; set; }
+        // public int VendorCode { get; set; }
+        public string? RejectionReason { get; set; }
         public string FormID { get; set; }
         public int UserID { get; set; }
         public string TerminalID { get; set; }

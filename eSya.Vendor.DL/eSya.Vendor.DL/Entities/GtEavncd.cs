@@ -23,6 +23,7 @@ namespace eSya.Vendor.DL.Entities
         public bool IsBlackListed { get; set; }
         public int ReasonForBlacklist { get; set; }
         public int SupplierScore { get; set; }
+        public string? RejectionReason { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

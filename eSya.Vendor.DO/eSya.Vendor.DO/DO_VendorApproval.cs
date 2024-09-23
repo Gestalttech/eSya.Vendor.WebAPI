@@ -10,6 +10,7 @@ namespace eSya.Vendor.DO
     {
         public int VendorId { get; set; }
         public int UserID { get; set; }
+        public string? RejectionReason { get; set; }
         public string TerminalID { get; set; }
     }
 }

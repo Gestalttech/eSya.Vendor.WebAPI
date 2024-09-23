@@ -18,9 +18,9 @@ namespace eSya.Vendor.WebAPI.Controllers
             _ApproveRepository = ApproveRepository;
         }
         [HttpGet]
-        public  async Task<IActionResult> GetVendorsForApprovals()
+        public  async Task<IActionResult> GetVendorsForApprovals(string approved)
         {
-            var vendors =await _ApproveRepository.GetVendorsForApprovals();
+            var vendors =await _ApproveRepository.GetVendorsForApprovals(approved);
             return Ok(vendors);
         }
         [HttpPost]
