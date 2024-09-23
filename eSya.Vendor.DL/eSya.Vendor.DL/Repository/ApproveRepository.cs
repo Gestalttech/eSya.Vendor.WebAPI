@@ -146,7 +146,6 @@ namespace eSya.Vendor.DL.Repository
 
                         vendor.ApprovalStatus = false;
                         vendor.RejectionReason = obj.RejectionReason;
-                        vendor.RejectionReason = null;
                         vendor.ModifiedOn = DateTime.Now;
                         vendor.ModifiedBy = obj.UserID;
                         vendor.ModifiedTerminal = obj.TerminalID;
