@@ -29,5 +29,11 @@ namespace eSya.Vendor.WebAPI.Controllers
             var vendors =await _ApproveRepository.ApproveVendor(obj);
             return Ok(vendors);
         }
+        [HttpPost]
+        public async Task<IActionResult> RejectVendor(DO_VendorApproval obj)
+        {
+            var vendors = await _ApproveRepository.RejectVendor(obj);
+            return Ok(vendors);
+        }
     }
 }
