@@ -41,6 +41,7 @@ namespace eSya.Vendor.DL.Repository
                         ReasonForBlacklist = x.ReasonForBlacklist,
                         SupplierScore = x.SupplierScore,
                         ActiveStatus = x.ActiveStatus,
+                        ApprovedStatus="Approved"
                     }).OrderBy(x => x.VendorName).ToListAsync();
                         return result;
                     }
@@ -60,6 +61,7 @@ namespace eSya.Vendor.DL.Repository
                    ReasonForBlacklist = x.ReasonForBlacklist,
                    SupplierScore = x.SupplierScore,
                    ActiveStatus = x.ActiveStatus,
+                   ApprovedStatus="Rejected"
                }).OrderBy(x => x.VendorName).ToListAsync();
                         return result;
                     }
@@ -79,6 +81,7 @@ namespace eSya.Vendor.DL.Repository
                      ReasonForBlacklist = x.ReasonForBlacklist,
                      SupplierScore = x.SupplierScore,
                      ActiveStatus = x.ActiveStatus,
+                     ApprovedStatus="Un-Approved"
                  }).OrderBy(x => x.VendorName).ToListAsync();
                         return result;
                     }
